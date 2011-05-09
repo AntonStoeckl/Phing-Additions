@@ -4,6 +4,18 @@ that are not included to Phing, which they hopefully will be at some point.
 It mostly contains tasks, a html logger for the time beeing and maybe other
 stuff.
 
+In a normal (linux) environment Phing should be installed as a PEAR package and be
+located under /usr/share/php/phing. The files in this repo follow the directory
+structure from this point on, so for example tasks/ext/SomeTask.php must be copied
+to /usr/share/php/phing/tasks/ext/SomeTask.php. Missing directories must be created.
+If you path to phing is different I guess you can figure out where to put stuff. ;-)
+
+At the time of this writing the author is using this version of phing: <Phing 2.4.5>
+(phing -v on the command line tells me so).
+
+Very probably there are other PEAR packages to be installed (very probably for SVN).
+Your phing should tell you about those missing dependencies.
+
 This software consists of voluntary contributions made by many individuals
 and is licensed under the LGPL. For more information please see
 <http://www.phing.info/trac/wiki/Users/License>.
