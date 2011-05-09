@@ -1,0 +1,9 @@
+This repository contains my additions to Phing see <http://phing.info>
+that are not included to Phing, which they hopefully will be at some point.
+
+It mostly contains tasks, a html logger for the time beeing and maybe other
+stuff.
+
+This software consists of voluntary contributions made by many individuals
+and is licensed under the LGPL. For more information please see
+<http://www.phing.info/trac/wiki/Users/License>.
