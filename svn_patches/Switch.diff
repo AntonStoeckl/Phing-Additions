@@ -1,0 +1,18 @@
+--- /usr/share/php/VersionControl/SVN/Switch.php	2011-03-28 18:03:39.000000000 +0200
++++ Switch.php	2011-11-09 10:37:12.000000000 +0100
+@@ -168,6 +168,7 @@
+                                 'password',
+                                 'no-auth-cache',
+                                 'no_auth_cache',
++                                'trust-server-cert',
+                                 'non-interactive',
+                                 'non_interactive',
+                                 'config-dir',
+@@ -258,6 +259,7 @@
+                     case 'non-recursive':
+                     case 'non-interactive':
+                     case 'no-auth-cache':
++                    case 'trust-server-cert':
+                         if ($val === true) {
+                             $_switches .= "--$switch ";
+                         }

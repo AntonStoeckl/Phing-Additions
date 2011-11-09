@@ -1,0 +1,25 @@
+--- /usr/share/php/phing/tasks/ext/svn/SvnBaseTask.php	2011-03-28 18:01:04.000000000 +0200
++++ SvnBaseTask.php	2011-11-09 10:37:51.000000000 +0100
+@@ -197,6 +197,22 @@
+     {
+         return isset( $this->svnSwitches['no-auth-cache'] ) ? $this->svnSwitches['no-auth-cache'] : '';
+     }
++
++    /**
++     * Sets the trust-server-cert switch
++     */
++    function setTrustServerCert($value)
++    {
++        $this->svnSwitches['trust-server-cert'] = $value;
++    }
++
++    /**
++     * Returns the trust-server-cert switch
++     */
++    function getTrustServerCert()
++    {
++        return isset( $this->svnSwitches['trust-server-cert'] ) ? $this->svnSwitches['trust-server-cert'] : '';
++    }
+     
+     /**
+      * Sets the non-recursive switch
