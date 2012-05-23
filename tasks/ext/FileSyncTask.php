@@ -230,7 +230,14 @@ class FileSyncTask extends Task
      */
     public function getCommand()
     {
-        $options = '-rpKz';
+        /**
+         * r - recursive
+         * p - preserve permissions
+         * K - treat symlinked dir on receiver as dir
+         * z - compress
+         * l - copy symlinks as symlinks
+         */
+        $options = '-rpKzl'; 
         if ($this->options !== null) {
             $options = $this->options;
         }
@@ -244,7 +251,7 @@ class FileSyncTask extends Task
             $options .= ' -e "ssh -i '. $this->identityFile . '"';
         } else {
             if ($this->remoteShell !== null) {
-                $options .= ' -e ' . $this->remoteShell;
+                $options .= ' -e "' . $this->remoteShell . '"';
             }
         }
         if ($this->dryRun === true) {
@@ -394,7 +401,7 @@ class FileSyncTask extends Task
      */
     public function setRemoteShell($shell)
     {
-        $this->remoteShell = $file;
+        $this->remoteShell = $shell;
     }
 
     /**
