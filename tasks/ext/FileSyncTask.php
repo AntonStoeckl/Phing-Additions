@@ -213,6 +213,7 @@ class FileSyncTask extends Task
 
         $this->log($command);
         if ($return != 0) {
+            throw new BuildException($return . ': ' . $this->getErrorMessage($return));
             $this->log('Task exited with code: ' . $return, Project::MSG_ERR);
             $this->log('Task exited with message: (' . $return . ') ' . $this->getErrorMessage($return), Project::MSG_ERR);
         } else {
