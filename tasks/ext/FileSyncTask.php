@@ -257,10 +257,9 @@ class FileSyncTask extends Task
         }
         if ($this->dryRun === true) {
             $options .= ' --dry-run';
-        } else {
-            if ($this->delete === true) {
-                $options .= ' --delete-after --ignore-errors --force';
-            }
+        }
+        if ($this->delete === true) {
+            $options .= ' --delete-after --ignore-errors --force';
         }
         if ($this->itemizeChanges === true) {
             $options .= ' --itemize-changes';
